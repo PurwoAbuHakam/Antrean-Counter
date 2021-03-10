@@ -8,12 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'LMP Counter',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'LMP Vaksin Counter'),
+      home: MyHomePage(title: 'LMP Counter'),
     );
   }
 }
@@ -67,10 +67,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Nomor Antrean :', style: TextStyle(fontSize: 20.0)),
+            Text('Nomor Antrian :', style: TextStyle(fontSize: 20.0)),
             Text(
               '$_counter',
-              style: TextStyle(fontSize: 180.0),
+              style: TextStyle(fontSize: 150.0),
             ),
             Padding(
               padding: EdgeInsets.only(top: 30.0),
@@ -128,11 +128,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.only(top: 40.0),
                                     child: Row(
                                       children: <Widget>[
                                         RaisedButton(
-                                          child: Text("Cancel"),
+                                          child: Text(
+                                            "Cancel",
+                                            style: TextStyle(fontSize: 20.0),
+                                          ),
                                           onPressed: () {
                                             Navigator.of(context).pop(false);
                                           },
@@ -145,8 +148,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                           child: Text(
                                             "OK",
                                             style: TextStyle(
-                                              color: Colors.white,
-                                            ),
+                                                color: Colors.white,
+                                                fontSize: 24.0),
                                           ),
                                           onPressed: () {
                                             validateAndReset(context);
@@ -183,7 +186,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   },
                   child: Text(
-                    "COUNT",
+                    "+",
                     style: TextStyle(
                       fontSize: 20.0,
                     ),
